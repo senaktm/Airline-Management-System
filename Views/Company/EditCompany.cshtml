@@ -1,0 +1,61 @@
+﻿@model AirlineManagementSystem.Models.Company_Table
+@{
+    ViewBag.Title = "EditCompany";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="form-group">
+
+            <h1>COMPANY NAME</h1>
+            <br />
+            <div style="background-color: #0009;margin-bottom:30px; margin-left: 30%; height: 15px; padding: 10px; text-align: center; width: 40%">
+                @Html.TextBoxFor(m => m.company_name, new { @class = "form-control" })
+                </div>
+            </div>
+            <div>
+                <button class="btn btn-warning">EDIT COMPANY</button>
+            </div>
+</body>
+</html>
+    <style>
+
+        h1 {
+            padding: 5px;
+            text-align: center;
+            width: 70%;
+            font-size: 20px;
+            margin-left: 15%;
+            margin-right: auto;
+            margin-top: 15%;
+            color: black;
+        }
+    
+        
+        
+        .btn-warning {
+            background-color: #f6843b;
+            border: solid;
+            color: black;
+            padding: 15px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 30%;
+            margin-left: 35%
+        }
+        </style>
+        }

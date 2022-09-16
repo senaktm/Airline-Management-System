@@ -1,0 +1,149 @@
+﻿@using AirlineManagementSystem.Models
+@model List<PlaneModel>
+@{
+    ViewBag.Title = "Flight";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="planeManagementPage">
+            <h1>PLANES </h1>
+            <table class="table table-bordered">
+                <tr>
+                    
+                    <th>PLANE ID   </th>
+                    <th>COMPANY ID  </th>
+                    <th>MODEL ID  </th>          
+                    <th>  </th>
+                    <th>   </th>
+                </tr>
+                <tbody>
+                    @foreach (var pln in Model)
+                    {
+                        <tr>
+                            <td>@pln.plane_id</td>
+                            <td>@pln.company_id</td>
+                            <td>@pln.model_id</td>                       
+                            <td><a href="/Plane/Delete/@pln.plane_id" class="btn btn-danger">DELETE</a></td>
+                            <td><a href="/EditPlane/EditPlane/@pln.plane_id" class="btn btn-succes">EDIT</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="/NewPlane/NewPlane" class="btn btn-primary">ADD NEW PLANE</a>
+
+
+
+
+
+            <br>
+        </div>
+
+    </body>
+    <style>
+        body {
+            background-image: url("airplane.jpg");
+            background-repeat: no-repeat;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+            padding-bottom: 10px;
+        }
+
+        .table {
+            width: 50%;
+            border: 1px solid;
+            border-collapse: collapse;
+            position: center;
+            background-color: #0009;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+            background-color: #0009;
+            color: white;
+            line-height: 15px;
+        }
+
+        th {
+            color: #f6843b;
+        }
+
+        .btn-danger {
+            background-color: black;
+            color: #f6843b;
+            padding: 15px 15px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+        }
+
+        .btn-succes {
+            background-color: black;
+            color: #f6843b;
+            padding: 15px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background-color: #f6843b;
+            border: solid;
+            color: black;
+            padding: 15px 15px;
+            text-align: center;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 10px;
+            width: 30%;
+            margin-left: 35%;
+            margin-top: 15px;
+            text-decoration: none;
+        }
+
+        .planeManagementPage {
+            margin: 0;
+            padding: 2%;
+        }
+
+
+
+        .planeManager p {
+            margin: 0;
+            padding: 0;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff
+        }
+    </style>
+</html>
+}
+
+
+

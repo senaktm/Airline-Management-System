@@ -1,0 +1,108 @@
+﻿@using AirlineManagementSystem.Models
+@model List<Model_Table>
+@{
+    ViewBag.Title = "Model";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="planeManagementPage">
+            <h1>Plane Management </h1>
+            <table class="table table-bordered">
+                <tr>
+                    <th>ID    </th>
+                    <th>NAME   </th>
+                </tr>
+                <tbody>
+                    @foreach (var mdl in Model)
+                    {
+                        <tr>
+                            <td>@mdl.model_id</td>
+                            <td>@mdl.model_name</td>
+                            <td><a href="/Model/Delete/@mdl.model_id" class="btn btn-danger">DELETE</a></td>
+                            <td><a href="/Model/Edit/@mdl.model_id" class="btn btn-succes">EDIT</a></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="/Company/Add/" class="btn btn-primary">ADD</a>
+
+
+
+
+
+
+
+            <br>
+        </div>
+
+    </body>
+    <style>
+   
+        body {
+            background-image: url("airplane.jpg");
+            background-repeat: no-repeat;
+        }
+
+        .planeManagementPage {
+            margin: 0;
+            padding: 2%;
+        }
+
+        .planeManager h1 {
+            margin: 0;
+            padding: 0;
+            color: cornflowerblue;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .planeManager p {
+            margin: 0;
+            padding: 0;
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #fff
+        }
+
+        .planeManager input[type="text"] {
+            width: 100%;
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            color: #fff;
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+    
+        .btn {
+            border:solid;
+            outline: none;
+            height: 40px;
+            background-color: cornflowerblue;
+            font-size: 18px;
+            cursor: pointer;
+            width: 100%;
+        }
+    </style>
+</html>
+}
+
+
+

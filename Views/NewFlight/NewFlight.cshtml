@@ -1,0 +1,108 @@
+﻿@model AirlineManagementSystem.Models.ModelMix
+
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="planeManagementPage">
+            
+            <form>
+
+
+                <h1 style="margin-left:45%;margin-top:5%;"> DEPARTURE POINT</h1>
+                <div style="background-color: #0009; margin-left: 35%; height: 15px; padding: 10px; text-align: center;width:30%">
+                    @Html.DropDownListFor(m => m.departure_table.departure_point, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+                </div> 
+                <h1 style="margin-left:45%"> ARRIVAL POINT</h1>
+
+
+                <div style="background-color: #0009; margin-left: 35%; height: 15px; padding: 10px; text-align: center; width: 30%">
+                    @Html.DropDownListFor(m => m.arrival_table.arrival_point, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+                </div>
+
+                <h1> DEPARTURE TIME</h1>
+
+                @Html.TextBox("departure_time", null, new { @class = "form-control" })
+                <h1> ARRIVAL TIME</h1>
+
+                @Html.TextBox("arrival_time", null, new { @class = "form-control" })
+                <h1> FLIGHT TIME</h1>
+
+                @Html.TextBox("flight_time", null, new { @class = "form-control" })
+                <h1> SEATING CAPACITY</h1>
+
+                @Html.TextBox("seating_capacity", null, new { @class = "form-control" })
+                <h1> PRICE</h1>
+
+                @Html.TextBox("price", null, new { @class = "form-control" })
+
+            </form>
+            <p></p>
+
+
+
+
+
+
+
+
+            <button type="submit" name="Ekle" value="Ekle" formmethod="post" formaction="Ekle">ADD</button>
+
+
+
+            <br>
+        </div>
+
+    </body>
+</html>
+
+<style>
+
+    h1 {
+        padding: 5px;
+        text-align: left;
+        width: 70%;
+        font-size: 20px;
+        margin-left: 13%;
+        margin-right: auto;
+        margin-top: 1px;
+        color: black;
+    }
+  
+
+    input {
+        color: white;
+        width: 70%;
+        padding: 12px 20px;
+        border: none;
+        background-color: #0009;
+        margin-left: 13%;
+        margin-right: auto;
+        height:10px;
+    }
+
+    button {
+        background-color: #f6843b;
+        border: solid;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 30%;
+        margin-left: 35%
+    }
+</style>
+}

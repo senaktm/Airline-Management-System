@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "NewDeparture";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+
+<form class="form-group" method="post">
+
+    <div>
+        <h1>DEPARTURE NAME  </h1>
+        <br />
+        <input type="text" class="form-control" name="departure_name" />
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">ADD NEW DEPARTURE</button>
+    </div>
+</form>
+
+<style>
+
+    h1 {
+        padding: 5px;
+        text-align: center;
+        width: 70%;
+        font-size: 20px;
+        margin-left: 13%;
+        margin-right: auto;
+        margin-top: 15%;
+        color: black;
+    }
+
+    input {
+        color: white;
+        width: 40%;
+        padding: 12px 20px;
+        border: none;
+        background-color: #0009;
+        margin-left: 28%;
+        margin-right: auto;
+        height: 10px;
+    }
+
+    .btn-info {
+        background-color: #f6843b;
+        border: solid;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 30%;
+        margin-left: 35%;
+        margin-top: 20px;
+    }
+</style>

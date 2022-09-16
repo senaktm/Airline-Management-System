@@ -1,0 +1,80 @@
+﻿@model AirlineManagementSystem.Models.ModelMix
+@{
+    ViewBag.Title = "EditFlight";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="form-group">
+            <form>
+
+
+                <h1 style="margin-top: 5%;"> PLANE COMPANY</h1><br>
+              
+                    @Html.DropDownListFor(m => m.company_table.company_id, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+                
+                <h1> PLANE MODEL</h1><br>
+
+         
+
+                    @Html.DropDownListFor(m => m.model_table.model_id, (List<SelectListItem>)ViewBag.dgr1, new { @class = "form-control" })
+                
+
+            </form>
+            <div>
+                <button class="btn btn-warning">EDIT PLANE</button>
+            </div>
+</body>
+</html>
+<style>
+
+    h1 {
+        padding: 20px;
+        text-align: center;
+        width: 20%;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .form-group {
+        margin: 30px;
+        color: white;
+        width: 40%;
+        padding: 12px 20px;
+        border: none;
+        background-color: #0009;
+        margin-left: 30%;
+        margin-right: auto;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+    .btn-warning {
+        background-color: #f6843b;
+        border: solid;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 30%;
+        margin-left: 35%
+    }
+</style>
+}

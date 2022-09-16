@@ -1,0 +1,98 @@
+﻿@model AirlineManagementSystem.Models.ModelMix
+@{
+    ViewBag.Title = "EditFlight";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+
+@using (Html.BeginForm())
+{
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+
+        <div class="form-group">
+
+
+            <br />
+            @Html.LabelFor(m => m.departure_table.departure_point)
+            <br />
+            @Html.DropDownListFor(m => m.departure_table.departure_point, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.arrival_table.arrival_point)
+            <br />
+            @Html.DropDownListFor(m => m.arrival_table.arrival_point, (List<SelectListItem>)ViewBag.dgr3, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.flight_table.departure_time)
+            <br />
+            @Html.TextBoxFor(m => m.flight_table.departure_time, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.flight_table.arrival_time)
+            <br />
+            @Html.TextBoxFor(m => m.flight_table.arrival_time, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.flight_table.flight_time)
+            <br />
+            @Html.TextBoxFor(m => m.flight_table.flight_time, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.flight_table.seating_capacity)
+            <br />
+            @Html.TextBoxFor(m => m.flight_table.seating_capacity, new { @class = "form-control" })
+            <br />
+            @Html.LabelFor(m => m.flight_table.price)
+            <br />
+            @Html.TextBoxFor(m => m.flight_table.price, new { @class = "form-control" })
+
+
+        </div>
+        <div>
+            <button class="btn btn-warning">EDIT FLIGHT</button>
+        </div>
+    </body>
+</html>
+<style>
+
+    h1 {
+        padding: 20px;
+        text-align: center;
+        width: 20%;
+        font-size: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10%;
+    }
+
+    .form-group {
+        margin: 30px;
+        color: white;
+        width: 40%;
+        padding: 12px 20px;
+        border: none;
+        background-color: #0009;
+        margin-left: 30%;
+        margin-right: auto;
+        font-size: 30px;
+        text-align: center;
+    }
+
+
+    .btn-warning {
+        background-color: #f6843b;
+        border: solid;
+        color: black;
+        padding: 15px 15px;
+        text-align: center;
+        display: inline-block;
+        font-size: 16px;
+        border-radius: 10px;
+        width: 30%;
+        margin-left: 35%
+    }
+</style>
+}
